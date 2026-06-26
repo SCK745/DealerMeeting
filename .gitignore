@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# Photoshop sources — only the exported .jpg files are needed on the web
+*.psd
