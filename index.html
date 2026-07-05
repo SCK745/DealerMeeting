@@ -3,18 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#0E1B2A" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<title>Bennington Pontoons — The 2027 Lineup, S to QX</title>
-<meta name="description" content="A guided walkthrough of the Bennington 2026 pontoon lineup — from the redesigned S Series to the all-new flagship QX — showing the price ladder and what changes at each tier." />
+<meta name="theme-color" content="#0b1826" />
+<title>Bennington Pontoons — The 2026 Lineup, S to QX</title>
+<meta name="description" content="Explore the full Bennington 2026 pontoon lineup — S, M, R, RX, Q, and QX — and see how each series steps up the price and luxury ladder." />
 
 <!-- ============================================================
-     PHOTOS — TO REPLACE WITH OFFICIAL BENNINGTON IMAGES:
-     Each model below uses a placeholder lifestyle photo from
-     Unsplash to evoke the right mood. To swap in real photos,
-     replace the src= URL on each <img class="model-photo">.
-     Recommended source: Bennington dealer asset library or
-     the press release at polaris.com.
+     IMAGES: the hero and series photos use the transparent PNGs in
+     "NO Background boat photots/". To swap in different photos,
+     replace the <img> src attributes on each page.
      ============================================================ -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,647 +18,82 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-page="home">
 
-<header class="site-header" id="top">
-  <div class="wrap header-inner">
-    <a class="brand" href="#top" aria-label="Bennington home">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">BENNINGTON</span>
-    </a>
-    <nav class="top-nav" aria-label="Primary">
-      <a href="#ladder">Lineup</a>
-      <a href="#s-series">S</a>
-      <a href="#m-series">M</a>
-      <a href="#l-series">L</a>
-      <a href="#r-series">R</a>
-      <a href="#rx-series">RX</a>
-      <a href="#q-series">Q</a>
-      <a href="#qx-series" class="nav-flagship">QX</a>
-      <a href="#compare">Compare</a>
-    </nav>
-  </div>
-</header>
+<!-- Shared nav bar — rendered by script.js -->
+<div id="site-nav"></div>
 
 <main>
 
-<!-- =================== HERO =================== -->
-<section class="hero">
-  <div class="hero-photo" aria-hidden="true">
-    <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2400&q=80" alt="" fetchpriority="high" decoding="async" />
-    <div class="hero-tint"></div>
-  </div>
-  <div class="wrap hero-inner">
-    <p class="eyebrow eyebrow-light">The 2027 Lineup</p>
-    <h1>Engineered to be your<br/>Bennington.</h1>
-    <p class="lede">From the <strong>S Series</strong> to the flagship <strong>QX</strong>, every Bennington is built with a purpose, distinguished by it materials, performance, and level of fit and finish.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="#ladder">Walk the Lineup</a>
-      <a class="btn btn-outline-light" href="#compare">Compare All Models</a>
+  <!-- =================== HERO =================== -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <p class="eyebrow" style="color: var(--sand-300);">The 2026 Lineup</p>
+        <h1>Engineered to be<br />your Bennington.</h1>
+        <p class="lede">Six series, one ladder. From the customizable <strong>S&nbsp;Series</strong> to the
+        all-new flagship <strong>QX</strong>, every step up adds equipment, luxury, and performance —
+        this guide shows you exactly what changes at each rung.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#price-ladder">Walk the Price Ladder</a>
+          <a class="btn btn-outline-light" href="compare.html">Compare All Series</a>
+        </div>
+      </div>
+      <!-- Hero boat — flagship QX (transparent PNG). Swap src to change. -->
+      <img class="hero-boat" src="NO Background boat photots/NoBackgroundQX.png"
+           alt="Bennington QX flagship pontoon" fetchpriority="high" decoding="async" />
     </div>
-  </div>
-  <div class="hero-scroll-hint" aria-hidden="true">
-    <span>Scroll</span>
-    <div class="hint-line"></div>
-  </div>
-</section>
+  </section>
 
-<!-- =================== LADDER =================== -->
-<section id="ladder" class="ladder">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Our Lineup</p>
-      <h2>Seven tiers, guided by one philosophy.</h2>
-      <p class="section-sub">With each step you can increased capability, more power, elevated craftsmanship, enhanced features, and more refined helm. Choose the tier that alligns with your vision.</p>
+  <!-- =================== PRICE LADDER =================== -->
+  <section class="series-section">
+    <div class="wrap">
+      <div class="section-head" style="margin-top: 40px;">
+        <p class="eyebrow">Entry to Flagship</p>
+        <h2>The Bennington price ladder.</h2>
+        <p class="section-sub">Six series in ascending order of price and luxury.
+        Click any rung to explore that series in depth.</p>
+      </div>
     </div>
+    <!-- Reusable price-ladder component — rendered by script.js.
+         On the homepage it shows the full staircase (no highlight). -->
+    <div id="price-ladder"></div>
+  </section>
 
-    <ol class="ladder-rail" role="list">
-      <li><a href="#s-series" class="rung" data-tier="s">
-        <span class="rung-num">01</span>
-        <span class="rung-name">S Series</span>
-        <span class="rung-tag">Entry · Redesigned for 2026</span>
-        <span class="rung-price">From $26K*</span>
-      </a></li>
-      <li><a href="#m-series" class="rung" data-tier="m">
-        <span class="rung-num">02</span>
-        <span class="rung-name">M Series</span>
-        <span class="rung-tag">Refreshed for 2026 · Sport &amp; Luxe</span>
-        <span class="rung-price">From $34K*</span>
-      </a></li>
-      <li><a href="#l-series" class="rung" data-tier="l">
-        <span class="rung-num">03</span>
-        <span class="rung-name">L Series</span>
-        <span class="rung-tag">Premium · Family flagship</span>
-        <span class="rung-price">From $48K*</span>
-      </a></li>
-      <li><a href="#r-series" class="rung" data-tier="r">
-        <span class="rung-num">04</span>
-        <span class="rung-name">R Line</span>
-        <span class="rung-tag">Performance · 40+ floor plans</span>
-        <span class="rung-price">From $70K*</span>
-      </a></li>
-      <li><a href="#rx-series" class="rung" data-tier="rx">
-        <span class="rung-num">05</span>
-        <span class="rung-name">RX Sport</span>
-        <span class="rung-tag">Athletic silhouette · 400+ HP</span>
-        <span class="rung-price">From $95K*</span>
-      </a></li>
-      <li><a href="#q-series" class="rung" data-tier="q">
-        <span class="rung-num">06</span>
-        <span class="rung-name">Q Line</span>
-        <span class="rung-tag">Luxury · Q Series foundation</span>
-        <span class="rung-price">From $110K*</span>
-      </a></li>
-      <li><a href="#qx-series" class="rung rung-flagship" data-tier="qx">
-        <span class="rung-num">07</span>
-        <span class="rung-name">QX</span>
-        <span class="rung-tag">Flagship · All-new for 2026</span>
-        <span class="rung-price">From $130K*</span>
-      </a></li>
-    </ol>
-    <p class="disclaimer">*Starting MSRP estimates. Final pricing varies by length, motor, options, and dealer.</p>
-  </div>
-</section>
-
-<!-- =================== S SERIES =================== -->
-<section id="s-series" class="model" data-tier="s">
-  <div class="model-photo-wrap">
-    <img class="model-photo"
-         src="NO Background boat photots/NoBackgroundS-series.png"
-         alt="s-series"
-         loading="lazy" decoding="async" />
-    <div class="model-photo-tint"></div>
-    <div class="wrap model-photo-overlay">
-      <p class="overlay-num">01 / 07</p>
-      <h2 class="overlay-title">S Series</h2>
-      <p class="overlay-sub">The gateway Bennington.</p>
-    </div>
-  </div>
-  <div class="wrap model-body">
-    <div class="model-meta">
-      <p class="tier-tag tier-tag-s">Entry · Redesigned</p>
-      <p class="price-band">From <strong>$26,000*</strong> · 18&ndash;22&prime;</p>
-    </div>
-    <div class="model-copy">
-      <p class="model-lede">The 2027 refresh brings the S Series fully up to date, upgraded fiberglass helm, Katana steering wheel, wireless phone charging, and Bennington's new Vivid UX display. Available in Sport and Luxe trims.</p>
-      <div class="feature-grid">
-        <div class="feature">
-          <p class="feature-label">Tube package</p>
-          <p class="feature-value">Twin 25&Prime; standard</p>
+  <!-- =================== HOW TO CHOOSE =================== -->
+  <section class="series-section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Where to Start</p>
+        <h2>Three questions that pick your rung.</h2>
+      </div>
+      <div class="home-cards">
+        <div class="home-card">
+          <h3>Shopping on value?</h3>
+          <p>Start at the <a href="s.html"><strong>S Series</strong></a> — Bennington's "have it your way"
+          entry line, redesigned for 2026 — or step to the <a href="m.html"><strong>M Series</strong></a>
+          for more standard equipment and layouts.</p>
         </div>
-        <div class="feature">
-          <p class="feature-label">Max horsepower</p>
-          <p class="feature-value">Up to 150 HP</p>
+        <div class="home-card">
+          <h3>Want customization or sport?</h3>
+          <p>The <a href="r.html"><strong>R Series</strong></a> is one of the most customizable pontoons
+          on the water. Want it athletic and sport-tuned? That's the
+          <a href="rx.html"><strong>RX</strong></a>.</p>
         </div>
-        <div class="feature">
-          <p class="feature-label">Helm</p>
-          <p class="feature-value">Fiberglass + Katana wheel</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Display</p>
-          <p class="feature-value">Vivid UX touchscreen</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Furniture</p>
-          <p class="feature-value">Marine-grade vinyl, foam-back</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Accessories</p>
-          <p class="feature-value">Click &amp; Cruise mounting system</p>
+        <div class="home-card">
+          <h3>Chasing top-shelf luxury?</h3>
+          <p>The <a href="q.html"><strong>Q Series</strong></a> delivers premium amenities one step below
+          the top. The all-new 2026 <a href="qx.html"><strong>QX</strong></a> is the flagship — carbon
+          fiber, Commander Dash 2.0, up to 1,000 HP.</p>
         </div>
       </div>
     </div>
-    <aside class="diff-card">
-      <p class="diff-eyebrow">Why pick the S</p>
-      <p class="diff-body">The lowest-cost path into a real Bennington, with the 2026 redesign giving it a helm experience that used to live two tiers up. Built for first-time owners and calmer water.</p>
-    </aside>
-  </div>
-</section>
-
-<!-- =================== M SERIES =================== -->
-<section id="m-series" class="model" data-tier="m">
-  <div class="model-photo-wrap">
-    <img class="model-photo"
-         src="NO Background boat photots/NoBackgroundM.png"
-         alt="Bennington M Series pontoon"
-         loading="lazy" decoding="async" />
-    <div class="model-photo-tint"></div>
-    <div class="wrap model-photo-overlay">
-      <p class="overlay-num">02 / 07</p>
-      <h2 class="overlay-title">M Series</h2>
-      <p class="overlay-sub">Refreshed for 2026. New layouts you can't get on the S.</p>
-    </div>
-  </div>
-  <div class="wrap model-body">
-    <div class="model-meta">
-      <p class="tier-tag tier-tag-m">Step-Up · Refreshed for 2026</p>
-      <p class="price-band">From <strong>$34,000*</strong> · 20&ndash;25&prime;</p>
-    </div>
-    <div class="model-copy">
-      <p class="model-lede">The 2027 M Series gets the same full refresh as the S, upgraded fiberglass helm, Vivid UX display, Click &amp; Cruise modular accessories — then adds layout options the S can't reach. Available in Sport and Luxe trims with new Open Fast Back and Center Swingback configurations.</p>
-      <div class="feature-grid">
-        <div class="feature">
-          <p class="feature-label">Tube package</p>
-          <p class="feature-value">Twin 25&Prime; (Triple ESP opt.)</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Max horsepower</p>
-          <p class="feature-value">Up to 250 HP</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Trims</p>
-          <p class="feature-value">Sport · Luxe</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">New layouts</p>
-          <p class="feature-value">Open Fast Back, Center Swingback</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Helm</p>
-          <p class="feature-value">Fiberglass + Vivid UX</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Furniture</p>
-          <p class="feature-value">Premium vinyl, deeper bolsters</p>
-        </div>
-      </div>
-    </div>
-    <aside class="diff-card">
-      <p class="diff-eyebrow">↑ What's new vs. S</p>
-      <ul class="diff-list">
-        <li>Two new layouts the S doesn't offer &mdash; Open Fast Back &amp; Center Swingback.</li>
-        <li>Length range opens to 25&prime; for more crew and more storage.</li>
-        <li>Optional Triple ESP tube package for bigger water and more HP.</li>
-        <li>Step up in standard features and trim-level finishes.</li>
-      </ul>
-    </aside>
-  </div>
-</section>
-
-<!-- =================== L SERIES =================== -->
-<section id="l-series" class="model" data-tier="l">
-  <div class="model-photo-wrap">
-    <!-- TODO: replace with NoBackgroundL.jpg once available; using M as visual stand-in -->
-    <img class="model-photo"
-         src="NO Background boat photots/NoBackgroundM.png"
-         alt="Bennington L Series pontoon (placeholder — awaiting L photo)"
-         loading="lazy" decoding="async" />
-    <div class="model-photo-tint"></div>
-    <div class="wrap model-photo-overlay">
-      <p class="overlay-num">03 / 07</p>
-      <h2 class="overlay-title">L Series</h2>
-      <p class="overlay-sub">Where the luxury starts.</p>
-    </div>
-  </div>
-  <div class="wrap model-body">
-    <div class="model-meta">
-      <p class="tier-tag tier-tag-l">Premium · Three Lines</p>
-      <p class="price-band">From <strong>$48,000*</strong> · 22&ndash;25&prime;</p>
-    </div>
-    <div class="model-copy">
-      <p class="model-lede">The L Series is the first real luxury step on the ladder. Three distinct lines L, L Bowrider, and LX Sport — let you tune for cruising, lounging, or sport. Sleek cladded exterior panels and integrated docking lights elevate the whole boat.</p>
-      <div class="feature-grid">
-        <div class="feature">
-          <p class="feature-label">Tube package</p>
-          <p class="feature-value">Triple ESP standard</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Max horsepower</p>
-          <p class="feature-value">Up to 300 HP</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Three lines</p>
-          <p class="feature-value">L · L Bowrider · LX Sport</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Exterior</p>
-          <p class="feature-value">Cladded panels, docking lights</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Upholstery</p>
-          <p class="feature-value">SmoothTouch™ pillow-top</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Helm</p>
-          <p class="feature-value">Touchscreen MFD ready</p>
-        </div>
-      </div>
-    </div>
-    <aside class="diff-card">
-      <p class="diff-eyebrow">↑ What's new vs. M</p>
-      <ul class="diff-list">
-        <li>Triple ESP tubes standard — a real performance and handling step.</li>
-        <li>Cladded fiberglass exterior panels — looks the part from the dock.</li>
-        <li>Three distinct sub-lines (L, L Bowrider, LX Sport) tune the boat to use case.</li>
-        <li>Integrated docking lights and refined helm ergonomics.</li>
-      </ul>
-    </aside>
-  </div>
-</section>
-
-<!-- =================== R LINE =================== -->
-<section id="r-series" class="model" data-tier="r">
-  <div class="model-photo-wrap">
-    <img class="model-photo"
-         src="NO Background boat photots/NoBackgroundR.png"
-         alt="Bennington R Line performance pontoon"
-         loading="lazy" decoding="async" />
-    <div class="model-photo-tint"></div>
-    <div class="wrap model-photo-overlay">
-      <p class="overlay-num">04 / 07</p>
-      <h2 class="overlay-title">R Line</h2>
-      <p class="overlay-sub">Customize everything. Outrun anything.</p>
-    </div>
-  </div>
-  <div class="wrap model-body">
-    <div class="model-meta">
-      <p class="tier-tag tier-tag-r">Performance · Custom</p>
-      <p class="price-band">From <strong>$70,000*</strong> · 21&ndash;30&prime;</p>
-    </div>
-    <div class="model-copy">
-      <p class="model-lede">The R Line is Bennington's most configurable boat, 40+ floor plans, above- and below-deck customizations, and the broadest length range in the lineup. It's where performance buyers and entertainers converge.</p>
-      <div class="feature-grid">
-        <div class="feature">
-          <p class="feature-label">Tube package</p>
-          <p class="feature-value">Triple ESP Elliptical</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Max horsepower</p>
-          <p class="feature-value">Up to 400 HP</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Floor plans</p>
-          <p class="feature-value">40+ configurations</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Layouts</p>
-          <p class="feature-value">Quad Bench, Swingback, Stern Lounge</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Helm</p>
-          <p class="feature-value">Dual Simrad MFD, sport bolsters</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Top</p>
-          <p class="feature-value">Power Bimini + sun shade</p>
-        </div>
-      </div>
-    </div>
-    <aside class="diff-card">
-      <p class="diff-eyebrow">↑ What's new vs. L</p>
-      <ul class="diff-list">
-        <li>Elliptical ESP tubes — meaningful jump in handling, lift, and top-end.</li>
-        <li>400 HP capable with reinforced transom architecture.</li>
-        <li>40+ floor plans vs. the L Series' tighter trim selection.</li>
-        <li>Length range opens to 30&prime; for entertaining-class layouts.</li>
-      </ul>
-    </aside>
-  </div>
-</section>
-
-<!-- =================== RX SPORT =================== -->
-<section id="rx-series" class="model" data-tier="rx">
-  <div class="model-photo-wrap">
-    <img class="model-photo"
-         src="NO Background boat photots/NobackgroundRX.png"
-         alt="Bennington RX Sport athletic pontoon"
-         loading="lazy" decoding="async" />
-    <div class="model-photo-tint"></div>
-    <div class="wrap model-photo-overlay">
-      <p class="overlay-num">05 / 07</p>
-      <h2 class="overlay-title">RX Sport</h2>
-      <p class="overlay-sub">Athletic. Composed. Quick.</p>
-    </div>
-  </div>
-  <div class="wrap model-body">
-    <div class="model-meta">
-      <p class="tier-tag tier-tag-rx">Performance · Sport</p>
-      <p class="price-band">From <strong>$95,000*</strong> · 23&ndash;25&prime;</p>
-    </div>
-    <div class="model-copy">
-      <p class="model-lede">RX Sport tightens the R Line into a focused performance package, shorter length range, athletic silhouette, plush comfort layered over pitch-perfect performance.</p>
-      <div class="feature-grid">
-        <div class="feature">
-          <p class="feature-label">Tube package</p>
-          <p class="feature-value">Triple ESP Performance</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Max horsepower</p>
-          <p class="feature-value">Up to 450 HP</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Silhouette</p>
-          <p class="feature-value">Sport profile, lower freeboard</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Helm</p>
-          <p class="feature-value">Dual Simrad MFD, ski-tow ready</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Furniture</p>
-          <p class="feature-value">Hand-stitched, contrast piping</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Tower</p>
-          <p class="feature-value">Integrated ski/wake tower opt.</p>
-        </div>
-      </div>
-    </div>
-    <aside class="diff-card">
-      <p class="diff-eyebrow">↑ What's new vs. R</p>
-      <ul class="diff-list">
-        <li>Sport-tuned hull treatment and lower stance — distinct visual identity.</li>
-        <li>Performance-tuned ESP package targeting 450 HP and watersports use.</li>
-        <li>Hand-stitched upholstery and contrast piping standard.</li>
-        <li>Integrated ski/wake tower as a factory option.</li>
-      </ul>
-    </aside>
-  </div>
-</section>
-
-<!-- =================== Q LINE =================== -->
-<section id="q-series" class="model" data-tier="q">
-  <div class="model-photo-wrap">
-    <img class="model-photo"
-         src="NO Background boat photots/NoBackgroundQ.png"
-         alt="Bennington Q Line luxury pontoon"
-         loading="lazy" decoding="async" />
-    <div class="model-photo-tint"></div>
-    <div class="wrap model-photo-overlay">
-      <p class="overlay-num">06 / 07</p>
-      <h2 class="overlay-title">Q Line</h2>
-      <p class="overlay-sub">The Q Series foundation. Luxury cruising at the top of the lineup.</p>
-    </div>
-  </div>
-  <div class="wrap model-body">
-    <div class="model-meta">
-      <p class="tier-tag tier-tag-q">Luxury · Q Series</p>
-      <p class="price-band">From <strong>$110,000*</strong> · 23&ndash;30&prime; <span class="opt-line">— Q &amp; Q Fastback twin-engine</span></p>
-    </div>
-    <div class="model-copy">
-      <p class="model-lede">The Q Line shares the Q Series DNA with the QX flagship, same materials grade, same Commander Dash helm family, same hull architecture — tuned for refined cruising rather than chasing the all-new flagship benchmark. Q Fastback adds twin-engine performance with sleek styling.</p>
-      <div class="feature-grid">
-        <div class="feature">
-          <p class="feature-label">Tube package</p>
-          <p class="feature-value">Triple ESP Elliptical+</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Max horsepower</p>
-          <p class="feature-value">Up to 700 HP (twin)</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Sub-lines</p>
-          <p class="feature-value">Q · Q Fastback</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Length range</p>
-          <p class="feature-value">23&ndash;30&prime;</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Helm</p>
-          <p class="feature-value">Commander Dash · Vivid UX</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Upholstery</p>
-          <p class="feature-value">Leather-grade vinyl</p>
-        </div>
-      </div>
-    </div>
-    <aside class="diff-card">
-      <p class="diff-eyebrow">↑ What's new vs. RX</p>
-      <ul class="diff-list">
-        <li>Steps into the Q Series — finer materials and more refined finish throughout.</li>
-        <li>Twin-engine capable via Q Fastback for serious open-water performance.</li>
-        <li>Length range opens to 30&prime; for true entertaining-class layouts.</li>
-        <li>Leather-grade upholstery and Commander Dash helm standard.</li>
-      </ul>
-    </aside>
-  </div>
-</section>
-
-<!-- =================== QX SERIES =================== -->
-<section id="qx-series" class="model model-flagship" data-tier="qx">
-  <div class="model-photo-wrap">
-    <img class="model-photo"
-         src="NO Background boat photots/NoBackgroundQX.png"
-         alt="Bennington QX flagship pontoon"
-         loading="lazy" decoding="async" />
-    <div class="model-photo-tint flagship-tint"></div>
-    <div class="wrap model-photo-overlay">
-      <p class="overlay-num gold">07 / 07 · FLAGSHIP</p>
-      <h2 class="overlay-title">QX</h2>
-      <p class="overlay-sub">Reimagined. Refined. Top of the lineup.</p>
-    </div>
-  </div>
-  <div class="wrap model-body">
-    <div class="model-meta">
-      <p class="tier-tag tier-tag-qx">All-New for 2026 · Flagship</p>
-      <p class="price-band">From <strong>$130,000*</strong> · 23&ndash;30&prime; <span class="opt-line">— twin outboards up to 1,000 HP</span></p>
-    </div>
-    <div class="model-copy">
-      <p class="model-lede">The fully redesigned 2026 QX is a statement boat. Sweeping hull lines, integrated louvers, carbon-fiber elements, and Commander Dash 2.0 with Vivid UX mapping. Industry-first retractable keeper rail. Powered helm chair. Multifunctional top box. New 30&prime; flagship.</p>
-      <div class="feature-grid">
-        <div class="feature">
-          <p class="feature-label">Floor plans</p>
-          <p class="feature-value">Quad Bench · Fastback · Swingback</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Helm</p>
-          <p class="feature-value">Commander Dash 2.0 · Vivid UX</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Hardware</p>
-          <p class="feature-value">Carbon fiber, billet aluminum</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Innovation</p>
-          <p class="feature-value">Retractable keeper rail</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Helm chair</p>
-          <p class="feature-value">Powered adjustments</p>
-        </div>
-        <div class="feature">
-          <p class="feature-label">Storage</p>
-          <p class="feature-value">Multifunctional top box</p>
-        </div>
-      </div>
-    </div>
-    <aside class="diff-card diff-card-flagship">
-      <p class="diff-eyebrow">↑ What's new vs. Q</p>
-      <ul class="diff-list">
-        <li>All-new 2026 redesign with sweeping hull lines and integrated louvers.</li>
-        <li>Twin-outboard capability up to 1,000 HP &mdash; well beyond the Q Line.</li>
-        <li>Carbon-fiber exterior elements and signature aft rail.</li>
-        <li>Commander Dash 2.0 with Vivid UX mapping &mdash; the new helm benchmark.</li>
-        <li>Industry-first retractable keeper rail and integrated fuel door.</li>
-        <li>Wind-blocking windshield, powered helm chair, multifunctional top box.</li>
-      </ul>
-    </aside>
-  </div>
-</section>
-
-<!-- =================== COMPARE =================== -->
-<section id="compare" class="compare">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Side By Side</p>
-      <h2>The whole ladder, on one screen.</h2>
-    </div>
-
-    <div class="compare-scroll">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th><span class="th-tier th-s">S</span></th>
-            <th><span class="th-tier th-m">M</span></th>
-            <th><span class="th-tier th-l">L</span></th>
-            <th><span class="th-tier th-r">R</span></th>
-            <th><span class="th-tier th-rx">RX</span></th>
-            <th><span class="th-tier th-q">Q</span></th>
-            <th><span class="th-tier th-qx">QX</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Starting MSRP*</th>
-            <td>$26K</td><td>$34K</td><td>$48K</td><td>$70K</td><td>$95K</td><td>$110K</td><td>$130K</td>
-          </tr>
-          <tr>
-            <th>Length range</th>
-            <td>18–22&prime;</td><td>20–25&prime;</td><td>22–25&prime;</td><td>21–30&prime;</td><td>23–25&prime;</td><td>23–30&prime;</td><td>23–30&prime;</td>
-          </tr>
-          <tr>
-            <th>Standard tubes</th>
-            <td>Twin 25&Prime;</td><td>Twin 25&Prime;</td><td>Triple ESP</td><td>Triple ESP Elliptical</td><td>Triple ESP Performance</td><td>Triple ESP Elliptical+</td><td>Performance Triple</td>
-          </tr>
-          <tr>
-            <th>Max horsepower</th>
-            <td>~150 HP</td><td>~250 HP</td><td>~300 HP</td><td>~400 HP</td><td>~450 HP</td><td>~700 HP twin</td><td>1,000 HP twin</td>
-          </tr>
-          <tr>
-            <th>Helm display</th>
-            <td>Vivid UX</td><td>Vivid UX</td><td>Touchscreen MFD</td><td>Dual Simrad</td><td>Dual Simrad</td><td>Commander Dash</td><td>Commander Dash 2.0</td>
-          </tr>
-          <tr>
-            <th>Upholstery</th>
-            <td>Marine vinyl</td><td>Premium vinyl</td><td>SmoothTouch™</td><td>Diamond-stitched</td><td>Hand-stitched, piping</td><td>Leather-grade vinyl</td><td>Furniture-grade</td>
-          </tr>
-          <tr>
-            <th>Top</th>
-            <td>Manual Bimini</td><td>Color Bimini</td><td>Power Bimini opt.</td><td>Power Bimini + shade</td><td>Power Bimini + tower</td><td>Power Bimini + arch opt.</td><td>Arch w/ integrated audio</td>
-          </tr>
-          <tr>
-            <th>Built for</th>
-            <td>First boats</td><td>New layouts, more space</td><td>Family luxury</td><td>Entertaining + perf.</td><td>Sport &amp; watersports</td><td>Refined cruising</td><td>Statement luxury</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="disclaimer">*MSRP figures are starting estimates for orientation. Confirm current pricing with your local Bennington dealer.</p>
-  </div>
-</section>
-
-<!-- =================== DECIDE =================== -->
-<section id="decide" class="decide">
-  <div class="wrap decide-grid">
-    <div class="decide-copy">
-      <p class="eyebrow">Choose Your Bennington</p>
-      <h2>Start from how you'll actually use it.</h2>
-      <ul class="decide-list">
-        <li>
-          <span class="decide-use">Calm lake afternoons, family of four</span>
-          <span class="decide-arrow">→</span>
-          <span class="decide-pick"><a href="#s-series">S</a> or <a href="#m-series">M</a></span>
-        </li>
-        <li>
-          <span class="decide-use">Full-time weekends, mixed water, real comfort</span>
-          <span class="decide-arrow">→</span>
-          <span class="decide-pick"><a href="#l-series">L Series</a></span>
-        </li>
-        <li>
-          <span class="decide-use">Big crew, broad water, entertaining-first</span>
-          <span class="decide-arrow">→</span>
-          <span class="decide-pick"><a href="#r-series">R Line</a></span>
-        </li>
-        <li>
-          <span class="decide-use">Watersports, sport profile, 400+ HP</span>
-          <span class="decide-arrow">→</span>
-          <span class="decide-pick"><a href="#rx-series">RX Sport</a></span>
-        </li>
-        <li>
-          <span class="decide-use">Refined cruising, twin-engine option, Q Series feel</span>
-          <span class="decide-arrow">→</span>
-          <span class="decide-pick"><a href="#q-series">Q Line</a></span>
-        </li>
-        <li>
-          <span class="decide-use">Best of everything — all-new 2026 flagship</span>
-          <span class="decide-arrow">→</span>
-          <span class="decide-pick gold"><a href="#qx-series">QX Flagship</a></span>
-        </li>
-      </ul>
-    </div>
-    <aside class="decide-card">
-      <p class="eyebrow eyebrow-gold">Build &amp; Price</p>
-      <h3>Configure with a dealer.</h3>
-      <p>Pricing, options, and inventory vary by dealer and model year. The official Bennington configurator is the source of truth.</p>
-      <a class="btn btn-gold" href="https://www.benningtonmarine.com/" target="_blank" rel="noopener">Visit Bennington</a>
-    </aside>
-  </div>
-</section>
+  </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-brand">
-      <span class="brand-mark dark" aria-hidden="true"></span>
-      <span>BENNINGTON</span>
-    </div>
-    <p>&copy; <span id="year"></span> · Lineup walkthrough. Not affiliated with Bennington Marine. Pricing and specifications shown are illustrative — confirm with your local dealer.</p>
-  </div>
-</footer>
+<!-- Shared footer — rendered by script.js -->
+<div id="site-footer"></div>
 
 <script src="script.js"></script>
 </body>
