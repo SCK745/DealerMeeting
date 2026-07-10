@@ -65,8 +65,11 @@ ul, ol { list-style: none; }
 }
 
 /* ---------- 2. NAV & FOOTER (injected by script.js) ---------- */
+/* The sticky rule lives on the #site-nav mount (not .site-header) because a
+   sticky element can only stick within its parent, and the mount div is
+   exactly header-height. */
+#site-nav { position: sticky; top: 0; z-index: 50; }
 .site-header {
-  position: sticky; top: 0; z-index: 50;
   background: rgba(11, 24, 38, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -75,13 +78,10 @@ ul, ol { list-style: none; }
   height: var(--header-h);
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
-.brand { display: flex; align-items: center; gap: 10px; }
-.brand-mark {
-  width: 26px; height: 26px; border-radius: 6px;
-  background: linear-gradient(135deg, var(--sand-500), var(--sand-300));
-}
-.brand-mark.dark { background: linear-gradient(135deg, var(--navy-700), var(--navy-600)); }
-.brand-text { color: var(--white); font-weight: 800; letter-spacing: 0.28em; font-size: 14px; }
+.brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+/* White Bennington wordmark (Logo_Images/) — sized by height, keeps ratio */
+.brand-logo { height: 24px; width: auto; display: block; }
+.brand-logo-footer { height: 20px; }
 
 .top-nav { display: flex; gap: 4px; overflow-x: auto; }
 .top-nav a {
@@ -283,7 +283,7 @@ a.step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
   .feature-list, .new-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .brand-text { display: none; }
+  .brand-logo { height: 18px; }
   .top-nav { gap: 0; }
   .top-nav a { padding: 7px 9px; font-size: 13px; }
 }

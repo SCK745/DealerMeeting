@@ -170,8 +170,7 @@ function renderNav() {
     <header class="site-header">
       <div class="wrap header-inner">
         <a class="brand" href="index.html" aria-label="Bennington home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-text">BENNINGTON</span>
+          <img class="brand-logo" src="Logo_Images/bennington_white_clean.png" alt="Bennington" />
         </a>
         <nav class="top-nav" aria-label="Primary">
           ${links
@@ -198,8 +197,7 @@ function renderFooter() {
     <footer class="site-footer">
       <div class="wrap footer-inner">
         <div class="footer-brand">
-          <span class="brand-mark dark" aria-hidden="true"></span>
-          <span>BENNINGTON</span>
+          <img class="brand-logo brand-logo-footer" src="Logo_Images/bennington_white_clean.png" alt="Bennington" />
         </div>
         <p>&copy; ${Math.max(new Date().getFullYear(), 2027)} · Dealer lineup walkthrough. Not affiliated with
         Bennington Marine. ${PRICE_DISCLAIMER}</p>
