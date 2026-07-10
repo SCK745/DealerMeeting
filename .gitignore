@@ -3,3 +3,6 @@
 
 # Photoshop sources — only the exported .jpg files are needed on the web
 *.psd
+
+# Claude Code local config
+.claude/
