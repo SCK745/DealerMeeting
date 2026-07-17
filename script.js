@@ -159,6 +159,36 @@ const SERIES = [
   },
 ];
 
+/* ---------------------------------------------------------------------------
+   1b. BOAT MODELS — the specific boats offered in each series.
+   ---------------------------------------------------------------------------
+   Each code maps to a page in the boats/ folder (lowercase, non-alphanumeric
+   characters become "-", e.g. "23MOFB-SPORT/30LE" -> boats/23mofb-sport-30le.html).
+   ADD OR REMOVE MODELS HERE — the dropdown on each series page (and on each
+   boat page) updates automatically. If you add a code, also create its page
+   in boats/ (copy an existing boat page and edit it).
+   -------------------------------------------------------------------------- */
+const BOATS = {
+  "s-one": ["188S1L", "20S1SR", "22S1SB"],
+  "s": ["22SSB", "22SSR", "20SSR-LUXE", "23QC-LUXE", "22SSR-LUXE", "22SSB-SPORT", "25SSB-LUXE"],
+  "lx": ["23LXSSB"],
+  "m": ["21ML", "22MFC", "22MFB", "23MOFB-SPORT/30LE", "24MSL-SPORT/30LE", "24MCSB-LUXE", "26MSB-LUXE"],
+  "r": ["23RSB-30LE", "25RSBA", "27RFBWAT2-30LE", "25RFBWA"],
+  "rt": ["25RTSBA"],
+  "rx": ["25RXFBA", "27RXSBWAT2"],
+  "q": ["25QSBA"],
+  "qx": ["25QXSBA", "27QXFBAT2", "27QXFBAX2-30LE", "30QXSBWAX2"],
+};
+
+/* Boat code -> boats/ page filename (must match the generated file names). */
+function boatSlug(code) {
+  return code.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
+/* Boat pages live in boats/, one level down — prefix internal links so the
+   shared nav/footer/lineup components work from both locations. */
+const PFX = location.pathname.includes("/boats/") ? "../" : "";
+
 /* Pricing fine print shown wherever a price band appears. */
 const PRICE_DISCLAIMER =
   "Starting MSRP, MY27. Excludes destination fee, options, and dealer fees. " +
@@ -183,14 +213,14 @@ function renderNav() {
   mount.innerHTML = `
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="brand" href="index.html" aria-label="Bennington home">
-          <img class="brand-logo" src="Logo_Images/bennington_white_clean.png" alt="Bennington" />
+        <a class="brand" href="${PFX}index.html" aria-label="Bennington home">
+          <img class="brand-logo" src="${PFX}Logo_Images/bennington_white_clean.png" alt="Bennington" />
         </a>
         <nav class="top-nav" aria-label="Primary">
           ${links
             .map(
               (l) =>
-                `<a href="${l.href}" class="${l.id === CURRENT_PAGE ? "active" : ""} ${
+                `<a href="${PFX}${l.href}" class="${l.id === CURRENT_PAGE ? "active" : ""} ${
                   l.id === "qx" ? "nav-flagship" : ""
                 }">${l.label}</a>`
             )
@@ -211,7 +241,7 @@ function renderFooter() {
     <footer class="site-footer">
       <div class="wrap footer-inner">
         <div class="footer-brand">
-          <img class="brand-logo brand-logo-footer" src="Logo_Images/bennington_white_clean.png" alt="Bennington" />
+          <img class="brand-logo brand-logo-footer" src="${PFX}Logo_Images/bennington_white_clean.png" alt="Bennington" />
         </div>
         <p>&copy; ${Math.max(new Date().getFullYear(), 2027)} · Dealer lineup walkthrough. Not affiliated with
         Bennington Marine. ${PRICE_DISCLAIMER}</p>
@@ -243,7 +273,7 @@ function renderLadder() {
     const isCurrent = i === currentIdx;
     return `
       <li style="--i:${i}">
-        <a href="${s.page}" class="rung rung-${s.id} ${isCurrent ? "rung-current" : ""} ${
+        <a href="${PFX}${s.page}" class="rung rung-${s.id} ${isCurrent ? "rung-current" : ""} ${
       s.id === "qx" ? "rung-flagship" : ""
     }" ${isCurrent ? 'aria-current="page"' : ""}>
           <span class="rung-num">0${i + 1}</span>
@@ -264,7 +294,7 @@ function renderLadder() {
       <div class="ladder-steps">
         ${
           up
-            ? `<a class="step-card step-up" href="${up.page}">
+            ? `<a class="step-card step-up" href="${PFX}${up.page}">
                  <span class="step-label">▲ Next step up · ${up.name} · ${up.priceBand}*</span>
                  <span class="step-why">${up.stepUpWhy}</span>
                </a>`
@@ -273,7 +303,7 @@ function renderLadder() {
         }
         ${
           down
-            ? `<a class="step-card step-down" href="${down.page}">
+            ? `<a class="step-card step-down" href="${PFX}${down.page}">
                  <span class="step-label">▼ Next step down · ${down.name} · ${down.priceBand}*</span>
                  <span class="step-why">${down.stepDownWhy}</span>
                </a>`
@@ -297,6 +327,38 @@ function renderLadder() {
         <p class="disclaimer">*${PRICE_DISCLAIMER}</p>
       </div>
     </section>`;
+}
+
+/* ---------------------------------------------------------------------------
+   5. BOAT MODEL DROPDOWN — rendered into <span id="boat-menu"></span> in the
+   hero of each series page (next to the Available Lengths chip) and on each
+   boat page. Lists the models for the current series; choosing one navigates
+   to that boat's page. Boat pages set <body data-boat="CODE"> so their own
+   model shows as selected.
+   -------------------------------------------------------------------------- */
+function renderBoatMenu() {
+  const mount = document.getElementById("boat-menu");
+  const models = BOATS[CURRENT_PAGE];
+  if (!mount || !models || models.length === 0) return;
+
+  const currentBoat = document.body.dataset.boat || "";
+  const select = document.createElement("select");
+  select.className = "boat-select";
+  select.setAttribute("aria-label", "View a specific model in this series");
+  select.innerHTML = `
+    <option value="" disabled ${currentBoat ? "" : "selected"}>View Models (${models.length})</option>
+    ${models
+      .map(
+        (code) =>
+          `<option value="${PFX}boats/${boatSlug(code)}.html" ${
+            code === currentBoat ? "selected" : ""
+          }>${code}</option>`
+      )
+      .join("")}`;
+  select.addEventListener("change", () => {
+    if (select.value) location.href = select.value;
+  });
+  mount.replaceWith(select);
 }
 
 /* ---------------------------------------------------------------------------
@@ -325,4 +387,5 @@ function initReveal() {
 renderNav();
 renderFooter();
 renderLadder();
+renderBoatMenu();
 initReveal();

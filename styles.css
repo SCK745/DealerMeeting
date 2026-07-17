@@ -219,6 +219,25 @@ a.step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 }
 .series-photo { filter: drop-shadow(0 22px 36px rgba(0, 0, 0, 0.45)); }
 
+/* Boat-model dropdown — styled to match the price chips beside it */
+.boat-select {
+  display: inline-block; margin-top: 20px; margin-left: 8px; padding: 9px 18px;
+  border-radius: 999px; background: var(--sand-500); border: 1px solid var(--sand-500);
+  font: 700 14px var(--font); color: var(--navy-900); cursor: pointer;
+  -webkit-appearance: none; appearance: none;
+}
+.boat-select:hover { background: var(--sand-300); }
+.boat-select option { background: var(--white); color: var(--ink); font-weight: 600; }
+
+/* Boat pages: link back to the parent series, styled like a chip */
+.back-chip {
+  display: inline-block; margin-top: 20px; margin-right: 8px; padding: 9px 18px;
+  border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.35);
+  font-weight: 700; font-size: 14px; color: var(--white);
+  transition: background 0.2s;
+}
+.back-chip:hover { background: rgba(255, 255, 255, 0.12); }
+
 /* content sections */
 .series-section { padding: 52px 0 0; }
 .series-section h2 {

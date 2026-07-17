@@ -13,6 +13,7 @@ https://sck745.github.io/DealerMeeting/
 | `index.html` | Homepage: hero + full lineup navigator |
 | `s-one.html` `s.html` `lx.html` `m.html` `r.html` `rt.html` `rx.html` `q.html` `qx.html` | One page per series (shared template) |
 | `compare.html` | Side-by-side comparison table |
+| `boats/*.html` | One page per boat model, reachable from the model dropdown on its series page |
 
 ## Shared pieces
 
@@ -32,6 +33,11 @@ https://sck745.github.io/DealerMeeting/
 3. **Copy**: overview / features / what's-new sections are plain HTML on each
    series page, marked with `a.` to `e.` comments matching the site spec. The S One
    and LX pages contain placeholder copy to confirm against dealer materials.
+4. **Boat models**: each page in `boats/` has placeholder Options and What's New
+   lists to fill in. The model list lives in the `BOATS` map in `script.js` (drives
+   every dropdown); to add a model, add its code there and run
+   `python3 scripts/generate_boat_pages.py` to create its page (existing pages are
+   never overwritten).
 
 ## Deploying to GitHub Pages
 
