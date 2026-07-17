@@ -1,7 +1,7 @@
 # DealerMeeting — Bennington 2027 Lineup Site
 
 Static marketing site for a Bennington pontoon dealership. Walks shoppers through the
-full lineup from entry to flagship: **S One → S → LX → Bowrider → M → R → RX → Q → QX**.
+full lineup from entry to flagship: **S One → S → LX → M → R → RT → RX → Q → QX**.
 
 Plain HTML/CSS/JS, no build step, no framework. Deployed to GitHub Pages at
 https://sck745.github.io/DealerMeeting/
@@ -11,7 +11,7 @@ https://sck745.github.io/DealerMeeting/
 | File | Page |
 |---|---|
 | `index.html` | Homepage: hero + full lineup navigator |
-| `s-one.html` `s.html` `lx.html` `bowrider.html` `m.html` `r.html` `rx.html` `q.html` `qx.html` | One page per series (shared template) |
+| `s-one.html` `s.html` `lx.html` `m.html` `r.html` `rt.html` `rx.html` `q.html` `qx.html` | One page per series (shared template) |
 | `compare.html` | Side-by-side comparison table |
 
 ## Shared pieces

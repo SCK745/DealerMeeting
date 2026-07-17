@@ -17,7 +17,7 @@
                                             cards at the bottom of each
                                             series page
    Each page declares itself with  <body data-page="s">  (or "s-one", "lx",
-   "bowrider", "m", "r", "rx", "q", "qx", "home", "compare"). The nav
+   "m", "r", "rt", "rx", "q", "qx", "home", "compare"). The nav
    highlight and lineup highlight key off that attribute.
    ========================================================================== */
 
@@ -75,20 +75,6 @@ const SERIES = [
       "Step down to LX for a lighter price in a streamlined, well-equipped package.",
   },
   {
-    id: "bowrider",
-    name: "Bowrider Series",
-    short: "Bowrider",
-    page: "bowrider.html",
-    tag: "Open-Bow Versatility",
-    tagline: "Bennington comfort with an open bow built for action.",
-    priceBand: "$70K–$90K", /* PLACEHOLDER — replace with real Bowrider MSRP */
-    photo: "Final_NoBackground/NoBckgroundBowRider.png",
-    stepUpWhy:
-      "Step up to Bowrider for an open-bow layout that blends pontoon comfort with runabout versatility.",
-    stepDownWhy:
-      "Step down to Bowrider for open-bow versatility at a friendlier price.",
-  },
-  {
     id: "m",
     name: "M Series",
     short: "M",
@@ -115,6 +101,20 @@ const SERIES = [
       "Step up to R for more luxury floorplans, deeper customization, and dynamic performance.",
     stepDownWhy:
       "Step down to R for broader floorplan choice at a lower starting price.",
+  },
+  {
+    id: "rt",
+    name: "RT Series",
+    short: "RT",
+    page: "rt.html",
+    tag: "Performance · Open Bow",
+    tagline: "R-family performance with an open bow built for action.",
+    priceBand: "$70K–$90K", /* PLACEHOLDER — replace with real RT MSRP */
+    photo: "Final_NoBackground/NoBckgroundBowRider.png",
+    stepUpWhy:
+      "Step up to RT for an open-bow layout that adds runabout versatility to R-family performance.",
+    stepDownWhy:
+      "Step down to RT for open-bow versatility at a friendlier starting price.",
   },
   {
     id: "rx",
@@ -168,7 +168,7 @@ const PRICE_DISCLAIMER =
 const CURRENT_PAGE = document.body.dataset.page || "home";
 
 /* ---------------------------------------------------------------------------
-   2. NAV BAR — Home | S One | S | LX | Bowrider | M | R | RX | Q | QX | Compare
+   2. NAV BAR — Home | S One | S | LX | M | R | RT | RX | Q | QX | Compare
    -------------------------------------------------------------------------- */
 function renderNav() {
   const mount = document.getElementById("site-nav");
