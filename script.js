@@ -75,6 +75,20 @@ const SERIES = [
       "Step down to LX for a lighter price in a streamlined, well-equipped package.",
   },
   {
+    id: "lt",
+    name: "LT Series",
+    short: "LT",
+    page: "lt.html",
+    tag: "Refined Step-Up", /* PLACEHOLDER positioning — confirm with dealer materials */
+    tagline: "A refined step between the LX and the M.", /* PLACEHOLDER */
+    priceBand: "TBD", /* PLACEHOLDER — replace with real LT MSRP */
+    photo: "Final_NoBackground/LT-Series.png",
+    stepUpWhy:
+      "Step up to LT for a more refined, better-appointed take on the step-up class.", /* PLACEHOLDER */
+    stepDownWhy:
+      "Step down to LT for step-up refinement at a friendlier starting point.", /* PLACEHOLDER */
+  },
+  {
     id: "m",
     name: "M Series",
     short: "M",
@@ -198,7 +212,7 @@ const PRICE_DISCLAIMER =
 const CURRENT_PAGE = document.body.dataset.page || "home";
 
 /* ---------------------------------------------------------------------------
-   2. NAV BAR — Home | S One | S | LX | M | R | RT | RX | Q | QX | Compare
+   2. NAV BAR — Home | S One | S | LX | LT | M | R | RT | RX | Q | QX | Compare
    -------------------------------------------------------------------------- */
 function renderNav() {
   const mount = document.getElementById("site-nav");

@@ -146,9 +146,9 @@ ul, ol { list-style: none; }
 .ladder-widget { padding: 56px 0 8px; border-top: 1px solid var(--line); margin-top: 64px; }
 .ladder-title { font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin-bottom: 26px; }
 
-/* The rail: 9 series, entry -> flagship. On desktop it reads left-to-right as
+/* The rail: 10 series, entry -> flagship. On desktop it reads left-to-right as
    an ascending staircase (each card lifts a bit more via --i). */
-.ladder-rail { display: grid; grid-template-columns: repeat(9, 1fr); gap: 10px; align-items: end; }
+.ladder-rail { display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px; align-items: end; }
 .ladder-rail > li { transform: translateY(calc(var(--i) * -5px)); }
 
 .rung {
@@ -283,7 +283,7 @@ a.step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 
 /* ---------- 7. RESPONSIVE ---------- */
 @media (max-width: 1100px) {
-  /* 9 cards get cramped below ~1100px: fall back to a 3x3 grid */
+  /* 10 cards get cramped below ~1100px: fall back to a narrower grid */
   .ladder-rail { grid-template-columns: repeat(3, 1fr); }
   .ladder-rail > li { transform: none; }
   .home-cards { grid-template-columns: repeat(2, 1fr); }

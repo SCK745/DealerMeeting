@@ -14,6 +14,7 @@ SERIES = {
     "s-one": ("S One Series", "s-one.html", "Final_NoBackground/LargeNoBackgroundSOne-Red.png"),
     "s":     ("S Series",     "s.html",     "Final_NoBackground/NoBackgroundS-series.png"),
     "lx":    ("LX Series",    "lx.html",    "Final_NoBackground/NoBackgroundLX.png"),
+    "lt":    ("LT Series",    "lt.html",    "Final_NoBackground/LT-Series.png"),
     "m":     ("M Series",     "m.html",     "Final_NoBackground/NoBackgroundM.png"),
     "r":     ("R Series",     "r.html",     "Final_NoBackground/NoBackgroundR.png"),
     "rt":    ("RT Series",    "rt.html",    "Final_NoBackground/NoBckgroundBowRider.png"),
