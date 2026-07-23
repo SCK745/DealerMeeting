@@ -16,8 +16,8 @@
                                  "widget" — compact strip + step-up/step-down
                                             cards at the bottom of each
                                             series page
-   Each page declares itself with  <body data-page="s">  (or "s-one", "lx",
-   "m", "r", "rt", "rx", "q", "qx", "home", "compare"). The nav
+   Each page declares itself with  <body data-page="s">  (or "s-one", "m",
+   "lx", "lt", "r", "rt", "rx", "q", "qx", "home", "compare"). The nav
    highlight and lineup highlight key off that attribute.
    ========================================================================== */
 
@@ -61,34 +61,6 @@ const SERIES = [
       "Step down to S for a budget-friendlier boat that is still highly customizable.",
   },
   {
-    id: "lx",
-    name: "LX Series",
-    short: "LX",
-    page: "lx.html",
-    tag: "Elevated Step-Up",
-    tagline: "A sleeker, better-equipped step beyond the S.",
-    priceBand: "$84,010", /* PLACEHOLDER — replace with real MSRP */
-    photo: "Final_NoBackground/NoBackgroundLX.png",
-    stepUpWhy:
-      "Step up to LX for a sleeker look and more standard equipment than the S.",
-    stepDownWhy:
-      "Step down to LX for a lighter price in a streamlined, well-equipped package.",
-  },
-  {
-    id: "lt",
-    name: "LT Series",
-    short: "LT",
-    page: "lt.html",
-    tag: "Refined Step-Up", /* PLACEHOLDER positioning — confirm with dealer materials */
-    tagline: "A refined step between the LX and the M.", /* PLACEHOLDER */
-    priceBand: "TBD", /* PLACEHOLDER — replace with real LT MSRP */
-    photo: "Final_NoBackground/LT-Series.png",
-    stepUpWhy:
-      "Step up to LT for a more refined, better-appointed take on the step-up class.", /* PLACEHOLDER */
-    stepDownWhy:
-      "Step down to LT for step-up refinement at a friendlier starting point.", /* PLACEHOLDER */
-  },
-  {
     id: "m",
     name: "M Series",
     short: "M",
@@ -100,7 +72,35 @@ const SERIES = [
     stepUpWhy:
       "Step up to M for the soul of the lineup, with more standard equipment and exclusive layouts.",
     stepDownWhy:
-      "Step down to M for a more budget-friendly boat that keeps the 2027 Sport/Luxe refresh.",
+      "Step down to M for a more budget-friendly boat with more space than the S.",
+  },
+  {
+    id: "lx",
+    name: "LX Series",
+    short: "LX",
+    page: "lx.html",
+    tag: "Elevated Step-Up",
+    tagline: "A sleeker, better-equipped step beyond the S.",
+    priceBand: "$84,010", /* PLACEHOLDER — replace with real MSRP */
+    photo: "Final_NoBackground/NoBackgroundLX.png",
+    stepUpWhy:
+      "Step up to LX for a sleeker look and more standard equipment than the M.",
+    stepDownWhy:
+      "Step down to LX for a lighter price in a streamlined, well-equipped package.",
+  },
+  {
+    id: "lt",
+    name: "LT Series",
+    short: "LT",
+    page: "lt.html",
+    tag: "Refined Step-Up", /* PLACEHOLDER positioning — confirm with dealer materials */
+    tagline: "A refined step-up just above the LX.", /* PLACEHOLDER */
+    priceBand: "TBD", /* PLACEHOLDER — replace with real LT MSRP */
+    photo: "Final_NoBackground/LT-Series.png",
+    stepUpWhy:
+      "Step up to LT for a more refined, better-appointed take on the step-up class.", /* PLACEHOLDER */
+    stepDownWhy:
+      "Step down to LT for step-up refinement at a friendlier starting point.", /* PLACEHOLDER */
   },
   {
     id: "r",
@@ -212,7 +212,7 @@ const PRICE_DISCLAIMER =
 const CURRENT_PAGE = document.body.dataset.page || "home";
 
 /* ---------------------------------------------------------------------------
-   2. NAV BAR — Home | S One | S | LX | LT | M | R | RT | RX | Q | QX | Compare
+   2. NAV BAR — Home | S One | S | M | LX | LT | R | RT | RX | Q | QX | Compare
    -------------------------------------------------------------------------- */
 function renderNav() {
   const mount = document.getElementById("site-nav");
