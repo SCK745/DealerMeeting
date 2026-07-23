@@ -154,7 +154,7 @@ const SERIES = [
     priceBand: "$151,225", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundQX.png",
     stepUpWhy:
-      "Step up to QX for the fully redesigned 2027 flagship: Commander Dash 2.0, carbon fiber, up to 1,000 HP.",
+      "Step up to QX for the full Bennington experience: Commander Dash 2.0, carbon fiber, up to 1,000 HP.",
     stepDownWhy: "", /* nothing above the QX */
   },
 ];
