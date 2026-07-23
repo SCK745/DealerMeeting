@@ -150,7 +150,7 @@ const SERIES = [
     short: "QX",
     page: "qx.html",
     tag: "Flagship · All-New for 2027",
-    tagline: "The pinnacle, fully redesigned for 2027.",
+    tagline: "Beyond Luxury, Boating industry 2026 Top Product.",
     priceBand: "$151,225", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundQX.png",
     stepUpWhy:
