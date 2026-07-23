@@ -149,7 +149,7 @@ const SERIES = [
     name: "QX Series",
     short: "QX",
     page: "qx.html",
-    tag: "Flagship · All-New for 2027",
+    tag: "Flagship · Boating Industry 2026 Top Product",
     tagline: "Beyond Luxury, Boating industry 2026 Top Product.",
     priceBand: "$151,225", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundQX.png",
